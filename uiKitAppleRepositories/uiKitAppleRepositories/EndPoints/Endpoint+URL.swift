@@ -11,12 +11,11 @@ import Foundation
 // https://api.github.com/orgs/apple/repos?type=owner&
 
 extension Endpoint {
-
     func findURL() -> URL {
         var components = URLComponents()
 
-        components.scheme = "https"
-        components.host = "api.github.com"
+        components.scheme = Constants.API.githubURLScheme
+        components.host = Constants.API.githubURLHost
         components.path = "/" + path
 
         components.queryItems = queryItems

@@ -24,7 +24,6 @@ class RepositoryCell: UITableViewCell {
                 createdAtLabel.text = repository.createdAt.shortDateString
                 stargazersCountLabel.text =  "\(repository.stargazersCount)"
             }
-
         }
     }
 

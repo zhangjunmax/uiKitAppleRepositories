@@ -20,7 +20,6 @@ let shortDateFormatter: DateFormatter = {
 }()
 
 extension String {
-
     var shortDateString: String {
         guard let date = dateAndTimeAmPmFormatter.date(from: self) else {
             return ""

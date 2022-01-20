@@ -18,15 +18,12 @@ enum NetworkState {
 var timeoutIntervalForRequest: TimeInterval = 40
 
 protocol NetworkerProtocol: AnyObject {
-    typealias Headers = [String: Any]
-
     func fetch<T>(type: T.Type,
                   url: URL,
                   httpMethod: String) -> AnyPublisher<T, Error> where T: Decodable
 }
 
 final class Networker: NetworkerProtocol {
-
     func fetch<T>(type: T.Type,
                   url: URL,
                   httpMethod: String) -> AnyPublisher<T, Error> where T: Decodable {

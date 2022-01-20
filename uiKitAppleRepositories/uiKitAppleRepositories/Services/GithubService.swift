@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol GithubServiceProtocol {
+protocol RepositoriesServiceProtocol {
     func fetchRepositories(organisation: String, page: Int, perPage: Int) -> AnyPublisher<[Repository], Error>?
 }
 
-class GithubService: GithubServiceProtocol {
+class GithubRepositoriesService: RepositoriesServiceProtocol {
     let networker: NetworkerProtocol
 
     init(networker: NetworkerProtocol = Networker()) {
@@ -20,7 +20,7 @@ class GithubService: GithubServiceProtocol {
     }
 
     func fetchRepositories(organisation: String, page: Int, perPage: Int) -> AnyPublisher<[Repository], Error>? {
-        print("fetchRepositories, organisation: \(organisation), page: \(page), perPage: \(perPage)")
+        logger.info("fetchRepositories, organisation: \(organisation), page: \(page), perPage: \(perPage)")
 
         let endpoint = Endpoint.repos(organisation: organisation, page: page, perPage: perPage)
 

@@ -12,12 +12,10 @@
 		8D31C6982799B68100D78126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D31C6962799B68100D78126 /* Main.storyboard */; };
 		8D31C69A2799B68200D78126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D31C6992799B68200D78126 /* Assets.xcassets */; };
 		8D31C69D2799B68200D78126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D31C69B2799B68200D78126 /* LaunchScreen.storyboard */; };
-		8D31C6A82799B68200D78126 /* uiKitAppleRepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6A72799B68200D78126 /* uiKitAppleRepositoriesTests.swift */; };
 		8D31C6B22799B68200D78126 /* uiKitAppleRepositoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6B12799B68200D78126 /* uiKitAppleRepositoriesUITests.swift */; };
 		8D31C6B42799B68200D78126 /* uiKitAppleRepositoriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6B32799B68200D78126 /* uiKitAppleRepositoriesUITestsLaunchTests.swift */; };
 		8D31C6CA2799B74800D78126 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6C92799B74800D78126 /* Networker.swift */; };
 		8D31C6CC2799B79300D78126 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6CB2799B79300D78126 /* Endpoint.swift */; };
-		8D31C6CE2799B7AC00D78126 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6CD2799B7AC00D78126 /* String+Date.swift */; };
 		8D31C6E42799C38200D78126 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6DB2799C38200D78126 /* Repository.swift */; };
 		8D31C6E52799C38200D78126 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6DE2799C38200D78126 /* RepositoriesViewController.swift */; };
 		8D31C6E62799C38200D78126 /* Endpoint+Repos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6E02799C38200D78126 /* Endpoint+Repos.swift */; };
@@ -26,6 +24,16 @@
 		8D31C6EA2799C3BD00D78126 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6E92799C3BD00D78126 /* RepositoriesViewModel.swift */; };
 		8D31C6EC2799C50300D78126 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6EB2799C50300D78126 /* RepositoryCell.swift */; };
 		8D31C6EF2799C7EF00D78126 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6EE2799C7EF00D78126 /* Logging.swift */; };
+		8D31C6F82799D8FF00D78126 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6F52799D8FF00D78126 /* EndpointTests.swift */; };
+		8D31C6FA2799D91300D78126 /* MockRepositoriesGithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6F92799D91300D78126 /* MockRepositoriesGithubService.swift */; };
+		8D31C6FD2799DA9100D78126 /* RepositoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6FC2799DA9100D78126 /* RepositoriesViewModelTests.swift */; };
+		8D31C6FF2799DB0400D78126 /* Repository+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C6FE2799DB0400D78126 /* Repository+Fixture.swift */; };
+		8D31C7012799DEFD00D78126 /* Repository+JSONFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C7002799DEFD00D78126 /* Repository+JSONFixture.swift */; };
+		8D31C7032799EC7400D78126 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C7022799EC7400D78126 /* JSONTests.swift */; };
+		8D31C7052799ECFC00D78126 /* ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C7042799ECFC00D78126 /* ExtensionTest.swift */; };
+		8DBF84A1279A001F004455B7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF84A0279A001F004455B7 /* Constants.swift */; };
+		8DBF84A6279A03C9004455B7 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF84A5279A03C9004455B7 /* String+Date.swift */; };
+		8DBF84A8279A03DE004455B7 /* UIView+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBF84A7279A03DE004455B7 /* UIView+Fade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +62,11 @@
 		8D31C69C2799B68200D78126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D31C69E2799B68200D78126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D31C6A32799B68200D78126 /* uiKitAppleRepositoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiKitAppleRepositoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D31C6A72799B68200D78126 /* uiKitAppleRepositoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiKitAppleRepositoriesTests.swift; sourceTree = "<group>"; };
 		8D31C6AD2799B68200D78126 /* uiKitAppleRepositoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uiKitAppleRepositoriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D31C6B12799B68200D78126 /* uiKitAppleRepositoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiKitAppleRepositoriesUITests.swift; sourceTree = "<group>"; };
 		8D31C6B32799B68200D78126 /* uiKitAppleRepositoriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uiKitAppleRepositoriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8D31C6C92799B74800D78126 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 		8D31C6CB2799B79300D78126 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		8D31C6CD2799B7AC00D78126 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		8D31C6DB2799C38200D78126 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		8D31C6DE2799C38200D78126 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		8D31C6E02799C38200D78126 /* Endpoint+Repos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Endpoint+Repos.swift"; sourceTree = "<group>"; };
@@ -70,6 +76,16 @@
 		8D31C6EB2799C50300D78126 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		8D31C6EE2799C7EF00D78126 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		8D31C6F02799D2F400D78126 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8D31C6F52799D8FF00D78126 /* EndpointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		8D31C6F92799D91300D78126 /* MockRepositoriesGithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositoriesGithubService.swift; sourceTree = "<group>"; };
+		8D31C6FC2799DA9100D78126 /* RepositoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelTests.swift; sourceTree = "<group>"; };
+		8D31C6FE2799DB0400D78126 /* Repository+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+Fixture.swift"; sourceTree = "<group>"; };
+		8D31C7002799DEFD00D78126 /* Repository+JSONFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+JSONFixture.swift"; sourceTree = "<group>"; };
+		8D31C7022799EC7400D78126 /* JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
+		8D31C7042799ECFC00D78126 /* ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTest.swift; sourceTree = "<group>"; };
+		8DBF84A0279A001F004455B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8DBF84A5279A03C9004455B7 /* String+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		8DBF84A7279A03DE004455B7 /* UIView+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Fade.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +154,9 @@
 		8D31C6A62799B68200D78126 /* uiKitAppleRepositoriesTests */ = {
 			isa = PBXGroup;
 			children = (
-				8D31C6A72799B68200D78126 /* uiKitAppleRepositoriesTests.swift */,
+				8D31C6FB2799DA0100D78126 /* Helpers */,
+				8D31C6F62799D8FF00D78126 /* Mocks */,
+				8D31C6F32799D8FF00D78126 /* Tests */,
 			);
 			path = uiKitAppleRepositoriesTests;
 			sourceTree = "<group>";
@@ -155,7 +173,8 @@
 		8D31C6C62799B72400D78126 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8D31C6C82799B72400D78126 /* Extensions */,
+				8DBF849F279A001A004455B7 /* Constants */,
+				8DBF84A2279A03C9004455B7 /* Extensions */,
 				8D31C6ED2799C7B400D78126 /* Logging */,
 				8D31C6C72799B72400D78126 /* Networking */,
 			);
@@ -169,14 +188,6 @@
 				8D31C6CB2799B79300D78126 /* Endpoint.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		8D31C6C82799B72400D78126 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8D31C6CD2799B7AC00D78126 /* String+Date.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8D31C6D72799C38200D78126 /* Screens */ = {
@@ -253,6 +264,67 @@
 				8D31C6EE2799C7EF00D78126 /* Logging.swift */,
 			);
 			path = Logging;
+			sourceTree = "<group>";
+		};
+		8D31C6F32799D8FF00D78126 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8D31C6F52799D8FF00D78126 /* EndpointTests.swift */,
+				8D31C7042799ECFC00D78126 /* ExtensionTest.swift */,
+				8D31C7022799EC7400D78126 /* JSONTests.swift */,
+				8D31C6FC2799DA9100D78126 /* RepositoriesViewModelTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		8D31C6F62799D8FF00D78126 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8D31C6F92799D91300D78126 /* MockRepositoriesGithubService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8D31C6FB2799DA0100D78126 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8D31C6FE2799DB0400D78126 /* Repository+Fixture.swift */,
+				8D31C7002799DEFD00D78126 /* Repository+JSONFixture.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8DBF849F279A001A004455B7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8DBF84A0279A001F004455B7 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8DBF84A2279A03C9004455B7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8DBF84A4279A03C9004455B7 /* String */,
+				8DBF84A3279A03C9004455B7 /* UIView */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8DBF84A3279A03C9004455B7 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				8DBF84A7279A03DE004455B7 /* UIView+Fade.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		8DBF84A4279A03C9004455B7 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				8DBF84A5279A03C9004455B7 /* String+Date.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,17 +458,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D31C6CE2799B7AC00D78126 /* String+Date.swift in Sources */,
 				8D31C6EF2799C7EF00D78126 /* Logging.swift in Sources */,
 				8D31C6912799B68100D78126 /* AppDelegate.swift in Sources */,
 				8D31C6932799B68100D78126 /* SceneDelegate.swift in Sources */,
+				8DBF84A8279A03DE004455B7 /* UIView+Fade.swift in Sources */,
 				8D31C6EC2799C50300D78126 /* RepositoryCell.swift in Sources */,
 				8D31C6EA2799C3BD00D78126 /* RepositoriesViewModel.swift in Sources */,
 				8D31C6CC2799B79300D78126 /* Endpoint.swift in Sources */,
 				8D31C6E72799C38200D78126 /* Endpoint+URL.swift in Sources */,
 				8D31C6E62799C38200D78126 /* Endpoint+Repos.swift in Sources */,
 				8D31C6CA2799B74800D78126 /* Networker.swift in Sources */,
+				8DBF84A6279A03C9004455B7 /* String+Date.swift in Sources */,
 				8D31C6E52799C38200D78126 /* RepositoriesViewController.swift in Sources */,
+				8DBF84A1279A001F004455B7 /* Constants.swift in Sources */,
 				8D31C6E82799C38200D78126 /* GithubService.swift in Sources */,
 				8D31C6E42799C38200D78126 /* Repository.swift in Sources */,
 			);
@@ -406,7 +480,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D31C6A82799B68200D78126 /* uiKitAppleRepositoriesTests.swift in Sources */,
+				8D31C6F82799D8FF00D78126 /* EndpointTests.swift in Sources */,
+				8D31C6FD2799DA9100D78126 /* RepositoriesViewModelTests.swift in Sources */,
+				8D31C7052799ECFC00D78126 /* ExtensionTest.swift in Sources */,
+				8D31C6FF2799DB0400D78126 /* Repository+Fixture.swift in Sources */,
+				8D31C6FA2799D91300D78126 /* MockRepositoriesGithubService.swift in Sources */,
+				8D31C7012799DEFD00D78126 /* Repository+JSONFixture.swift in Sources */,
+				8D31C7032799EC7400D78126 /* JSONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +661,6 @@
 				INFOPLIST_FILE = uiKitAppleRepositories/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -608,7 +687,6 @@
 				INFOPLIST_FILE = uiKitAppleRepositories/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -8,7 +8,6 @@
 import Foundation
 
 extension Endpoint {
-
     static func repos(organisation: String, page: Int, perPage: Int) -> Self {
         return Endpoint(path: "orgs/\(organisation)/repos",
                         httpMethod: "GET",

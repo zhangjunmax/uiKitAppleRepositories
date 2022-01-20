@@ -12,7 +12,6 @@ var logger = Logging.shared.logger
 let bundleIdentifier = Bundle.main.bundleIdentifier!
 
 class Logging {
-
     static let shared = Logging()
 
     private init() { }
@@ -24,7 +23,6 @@ class Logging {
 
     var logger: Logger {
         if Logging.isEnableLogging {
-
             return enabledLogger
         } else {
             return disabledLogger

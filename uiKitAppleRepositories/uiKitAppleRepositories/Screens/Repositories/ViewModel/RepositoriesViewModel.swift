@@ -19,10 +19,7 @@ enum RemoteContentLoadingState: Equatable {
 }
 
 class RepositoriesViewModel {
-
-    var pageSize = 100
-
-    private let githubService: GithubServiceProtocol
+    private let repositoriesService: RepositoriesServiceProtocol
     private var cancellables: Set<AnyCancellable> = []
 
     @Published private(set) var allRepositories: [Repository] = []
@@ -30,41 +27,23 @@ class RepositoriesViewModel {
 
     var tempRepositories: [Repository] = []
 
-    init(githubService: GithubServiceProtocol = GithubService()) {
-        print("init githubService: \(githubService)")
-        self.githubService = githubService
+    init(repositoriesService: RepositoriesServiceProtocol = GithubRepositoriesService()) {
+        self.repositoriesService = repositoriesService
     }
 
-    private func tryAddRepositories(repositories: [Repository]) -> Bool {
-
-        if repositories.count > 0 {
-            tempRepositories.append(contentsOf: repositories)
-        }
-
-        if repositories.count < pageSize  {
-            allRepositories = tempRepositories.sorted{$0.stargazersCount > $1.stargazersCount}
-
-            print("end allRepositories.count: \(allRepositories.count)")
-            print("end allRepositories.first?.name: \(allRepositories.first?.name)")
-            return false
-        } else {
-            return true
-        }
-    }
-
-    func fetchAllRepositories(organisation: String, page: Int, perPage: Int) {
-        print("fetchAllRepositories, page: \(page), githubService: \(githubService)")
+    func fetchRecursiveRepositories(organisation: String, page: Int, perPage: Int) {
+        logger.info("fetchRecursiveRepositories, organisation: \(organisation), page: \(page), perPage: \(perPage)")
 
         state = .loading
 
-        githubService.fetchRepositories(organisation: organisation, page: page, perPage: perPage)?
+        repositoriesService.fetchRepositories(organisation: organisation, page: page, perPage: perPage)?
             .receive(on: DispatchQueue.main)
             .sink { completion in
-                print("fetchAllRepositories, completion22: \(completion)")
+                logger.info("fetchAllRepositories end")
 
                 switch completion {
                 case .failure(let error):
-                    print("fetchAllRepositories, error: \(error)")
+                    logger.info("fetchAllRepositories, error: \(error.localizedDescription)")
 
                     self.state = .error(.repositoriesFetch)
 
@@ -72,25 +51,27 @@ class RepositoriesViewModel {
                     self.state = .finishedLoading
                 }
             } receiveValue: { [weak self] repositories in
-                print("fetchAllRepositories, receiveValue, repositories.count: \(repositories.count)")
+                logger.info("fetchAllRepositories, receiveValue, repositories.count: \(repositories.count)")
 
-                if self?.tryAddRepositories(repositories: repositories) ?? false {
-                    self?.fetchAllRepositories(organisation: organisation, page: page + 1, perPage: perPage)
-                } else {
-
+                if repositories.count > 0 {
+                    self?.tempRepositories.append(contentsOf: repositories)
                 }
 
+                //wenn current items count small as perPage -> finish fetch
+                if repositories.count < perPage  {
+                    self?.allRepositories = (self?.tempRepositories.sorted{$0.stargazersCount > $1.stargazersCount})!
+
+                } else {
+                    self?.fetchRecursiveRepositories(organisation: organisation, page: page + 1, perPage: perPage)
+                }
             }
             .store(in: &cancellables)
     }
 
+//    Repositories from apple need to be sorted by stargazersCount, but the github api now only supports sorting by created, updated, pushed, full_name (https://docs.github.com/en/rest/reference/repos). So the solution here is to get all the repositories recursively and then sort them all
     func fetchAllAppleRepositories() {
-        print("fetchAllAppleRepositories")
+        logger.info("fetchAllAppleRepositories")
 
-        fetchAllRepositories(organisation: "apple", page: 1, perPage: 100)
+        fetchRecursiveRepositories(organisation: Constants.API.githubRepositoryOrganisationApple, page: 1, perPage: Constants.API.githubRepositoriesPerPage)
     }
-
-//    func retrySearch() {
-//        fetchPlayers(with: currentSearchQuery)
-//    }
 }
