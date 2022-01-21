@@ -1,5 +1,7 @@
 # uiKitAppleRepositories
 
+Storyboard + MVVM + Combine + Test
+
 ##English
 ###Repositories from apple need to be sorted by stargazersCount, but the github api now only supports sorting by created, updated, pushed, full_name (https://docs.github.com/en/rest/reference/repos). So the solution here is to get all the repositories recursively and then sort them all, which is fine for small datasets (here 150 repositories from Apple), but if there is a lot of data, we need to find another solution.
 
